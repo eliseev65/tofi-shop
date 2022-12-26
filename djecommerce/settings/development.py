@@ -43,16 +43,26 @@ DEBUG_TOOLBAR_CONFIG = {
 #     }
 # }
 
+# DATABASES = {
+#         'default': {
+#             'ENGINE': 'django.db.backends.postgresql',
+#             'NAME': 'ecom',
+#             'USER': 'postgres',
+#             'PASSWORD': '1111',
+#             'HOST': 'localhost',
+#             'PORT': '5432',
+#         }
+#     }
+
+
 DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': 'ecom',
-            'USER': 'postgres',
-            'PASSWORD': '1111',
-            'HOST': 'localhost',
-            'PORT': '5432',
-        }
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'OPTIONS': {
+            'read_default_file': '/path/to/my.cnf',
+        },
     }
+}
 
 STRIPE_PUBLIC_KEY = config('STRIPE_TEST_PUBLIC_KEY')
 STRIPE_SECRET_KEY = config('STRIPE_TEST_SECRET_KEY')
